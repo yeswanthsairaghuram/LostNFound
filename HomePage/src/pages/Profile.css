@@ -1,0 +1,387 @@
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.profile-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  padding: 30px 20px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+ 
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.edit-btn {
+  padding: 8px 16px;
+  background: #e0f0ff;
+  border: 1px solid #1d90ce;
+  color: #0077b6;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+ 
+.profile-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.profile-card {
+  background: white;
+  flex: 1;
+  min-width: 280px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.avatar-container {
+  margin: 0 auto 10px;
+}
+
+
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-weight: 600;
+}
+
+.activity-card {
+  background: white;
+  flex: 2;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.15);
+}
+
+.activity-card h3 {
+  margin-bottom: 15px;
+}
+
+.activity-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.stat-box {
+  background: #5a9adb;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+ 
+.reported-section {
+  margin-top: 40px;
+}
+
+.reported-section h3 {
+  margin-bottom: 15px;
+}
+
+.all-itmes-container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* border:2px solid; */
+  justify-content: flex-start !important;
+}
+ 
+.lost-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
+  width: 350px;
+  overflow: hidden;
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.no-image {
+  width: 100%;
+  height: 160px;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-labels {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.badge.status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: white;
+  background-color: gray;
+}
+
+.badge.status.lost {
+  background-color: #d90429;
+}
+
+.badge.status.found {
+  background-color: #0198b7;
+}
+ 
+.card-content {
+  padding: 16px;
+}
+
+.lost-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.card-info p {
+  margin: 4px 0;
+  font-size: 0.85rem;
+}
+
+ 
+.details-btn {
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #0077b6;
+  color: white;
+  font-weight: 500;
+}
+
+.details-btn:hover {
+  background-color: #005f87;
+}
+
+.delete-btn {
+  background-color: #ff4d4f;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+ 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  z-index: 1000;
+  box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: modalIn 0.3s ease forwards;
+}
+
+@keyframes modalIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.modal h2 {
+  margin-bottom: 15px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.modal input,
+.modal select {
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal button,
+.cancel-btn {
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.modal button[type="submit"] {
+  background: #0077b6;
+  color: white;
+}
+
+.cancel-btn {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background: #ddd;
+}
+
+ 
+.confirm-modal {
+  border: 2px solid #d90429;
+  padding: 25px;
+  background: #fff8f8;
+  animation: slideUpFade 0.4s ease forwards;
+}
+
+.confirm-modal h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.confirm-modal .modal-actions {
+  justify-content: space-between;
+}
+
+.confirm-delete {
+  background-color: #d90429;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.confirm-delete:hover {
+  background-color: #a8031f;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+ 
+.pop-slide {
+  animation: slideUpFade 0.4s ease forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -30%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+ 
+.toastify-message {
+  background-color: #28a745 !important;
+  color: white !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+
+@media (max-width: 768px) {
+  .profile-main {
+    flex-direction: column;
+  }
+  .all-itmes-container-cards {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,63 @@
+
+body {
+  background-color: #f8f9fa;
+  color: #111;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+body.dark {
+  background-color: #0e1a26; 
+  color: #f1f1f1;
+}
+
+body.dark .lost-card,
+body.dark .details-card,
+body.dark .posted-card,
+body.dark .modal-content,
+body.dark .filter-controls,
+body.dark .card-content {
+  background-color: #132c42;
+  color: #f1f1f1;
+}
+
+
+body.dark .link,
+body.dark .login-btn,
+body.dark a {
+  color: #219ebc;
+}
+
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background-color: #1f2f3e;
+  color: #fff;
+  border: 1px solid #4a6c8a;
+}
+
+body.dark .search-suggestion-list,
+body.dark .suggestion-list {
+  background-color: #1f2f3e;
+  color: #fff;
+  border-color: #4a6c8a;
+}
+
+body.dark .details-btn,
+body.dark .claim-btn,
+body.dark .submit-btn,
+body.dark .cancel-btn {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+body.dark .details-btn:hover,
+body.dark .claim-btn:hover {
+  background-color: #005f87;
+}
+
+
+.badge.urgent {
+  background-color: #e63946;
+}
